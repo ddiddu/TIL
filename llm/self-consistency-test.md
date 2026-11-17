@@ -10,7 +10,7 @@
 2. **적응형:** 두 번 돌려 같으면 멈추고, 다르면 더 돌려 다수결로 정한다. 데이터가 안정적일수록 두 번에서 끝나는 항목이 많다.
 3. **토큰 확률(logprobs):** 한 번 돌린 뒤, 고른 답의 확률이 기준값보다 낮은 항목만 다시 돌린다. 기준값은 평가할 데이터와 다른 데이터로 정해야 한다.
 
-## References
+## Sources
 - Wang et al., Self-Consistency (2022): https://arxiv.org/abs/2203.11171
 - Aggarwal et al., Adaptive-Consistency (2023): https://arxiv.org/abs/2305.11860
 - Manakul et al., SelfCheckGPT (2023): https://arxiv.org/abs/2303.08896
