@@ -4,12 +4,12 @@ Temperature 0 and a fixed seed help, but they don't guarantee identical outputs 
 
 **What it means:** how the GPU splits the computation depends on how many requests it is processing at the same time.
 
-An analogy: you hand the job of adding 1,000 numbers to a team.
+An analogy: you hand a team the job of adding 1,000 numbers.
 
 - If the team is busy, one person adds all 1,000 numbers from start to finish.
 - If people are idle, ten people each add 100, and then the partial sums are added together.
 
-Mathematically the answer should be the same, but a computer rounds at every step, so the last digits can differ. The same request can be split differently depending on whether it arrived alone or batched with seven others, and the last digits of the result change. That is what "not batch-invariant" means. With workers 1 (sending one request at a time), each request always runs alone, so it is split the same way every time and the result is the same (as long as no one else is sending requests to the same server).
+Mathematically, the answer should be the same, but a computer rounds at every step, so the last digits can differ. The same request can be split differently depending on whether it arrived alone or batched with seven others, and the last digits of the result change. That is what "not batch-invariant" means. With workers 1 (sending one request at a time), each request runs alone, so it splits the same way every time and produces the same result (as long as no one else is sending requests to the same server).
 
 **Does everyone run with workers 1?** No, most don't.
 
@@ -19,7 +19,7 @@ Mathematically the answer should be the same, but a computer rounds at every ste
   - It requires an NVIDIA GPU with compute capability 9.0 or higher; the GPUs listed are the H-series (H100, H200) and B-series (B100, B200).
   - It can be slower than the default mode, which the docs describe as an intentional trade-off for reproducibility.
 - Many teams design around the variation: run several times and take a majority vote, or measure the noise level first and only treat larger differences as meaningful.
-- workers 1 is the simplest option at small scale. It is enough for small experiments that check a prompt's effect clearly, but it gets slow as the scale grows.
+- workers 1 is the simplest option at small scale. It is enough for small experiments that clearly test a prompt's effect, but it gets slow as the scale grows.
 
 ## temp 0과 고정 seed로도 LLM 출력이 같다는 보장은 없다 (batch invariance)
 
@@ -41,8 +41,8 @@ temperature 0과 고정된 seed가 도움이 되지만, 배치 구성과 스케�
   - vLLM에서는 `VLLM_BATCH_INVARIANT=1`로 켠다.
   - compute capability 9.0 이상인 NVIDIA GPU가 필요하며, 명시된 GPU는 H-series(H100, H200)와 B-series(B100, B200)다.
   - 켜면 기본 모드보다 느려질 수 있고, 문서는 이를 재현성을 위한 의도된 맞교환이라고 설명한다.
-- 흔들림을 전제로 설계하는 곳도 많다. 여러 번 돌려서 다수결을 내거나, 노이즈 수준을 먼저 재고 그보다 큰 차이만 의미 있게 본다.
-- workers 1은 소규모로 사용하기에 가장 간단한 방법이다. 프롬프트 효과를 명확하게 확인하려는 소규모 실험에는 충분하다. 대신 규모가 커지면 느려진다.
+- 흔들림을 전제로 설계하는 곳도 많다. 여러 번 돌려서 다수결을 내거나, 노이즈 수준을 먼저 재고 그보다 큰 차이만 유의미하다고 본다.
+- workers 1은 소규모로 사용하기에 가장 간단한 방법이다. 프롬프트 효과를 명확히 확인하기에는 소규모 실험으로 충분하다. 대신 규모가 커지면 느려진다.
 
 ## Sources
 - vLLM docs v0.19.1, Batch Invariance: https://docs.vllm.ai/en/v0.19.1/features/batch_invariance/
