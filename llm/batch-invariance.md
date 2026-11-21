@@ -21,7 +21,7 @@ Mathematically, the answer should be the same, but a computer rounds at every st
 - Many teams design around the variation: run several times and take a majority vote, or measure the noise level first and only treat larger differences as meaningful.
 - workers 1 is the simplest option at small scale. It is enough for small experiments that clearly test a prompt's effect, but it gets slow as the scale grows.
 
-## temp 0과 고정 seed로도 LLM 출력이 같다는 보장은 없다 (batch invariance)
+# temp 0과 고정 seed로도 LLM 출력이 같다는 보장은 없다 (batch invariance)
 
 temperature 0과 고정된 seed가 도움이 되지만, 배치 구성과 스케줄링이 달라지면 동일한 출력을 보장하지 않는다.
 
