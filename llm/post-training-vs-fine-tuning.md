@@ -51,9 +51,7 @@ Prompting leaves the model as it is and changes its behavior by putting instruct
 
 When adding rules by hand reaches its limit, let the model learn the criteria directly from labels. The precondition is trustworthy labels. Until then, a step in between is to put similar labeled cases into the prompt as few-shot examples, which uses the labels without changing any weights.
 
----
-
-# Post-training vs fine-tuning (한국어)
+# 사후 학습 vs 미세 조정
 
 ## Pre-training (사전 학습)
 
