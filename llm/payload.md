@@ -13,7 +13,7 @@ Example (LLM API request body):
 
 The whole object is the payload in the API sense; the `content` string is the payload in the model-input sense.
 
-## 페이로드
+# 페이로드
 
 - 원래 뜻은 "운반되는 화물"이다. 로켓에서는 연료나 로켓 몸체가 아니라 실제로 실어 나르는 위성을 payload라고 부른다.
 - 네트워크 요청이나 메시지에서는 헤더 같은 메타데이터를 뺀 실제 내용(body)을 가리킨다.
