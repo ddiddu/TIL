@@ -4,7 +4,7 @@
 2. **Adaptive:** run twice; stop if they agree, otherwise run more and take the majority. The more stable the data, the more items stop at 2 runs.
 3. **Token probabilities (logprobs):** run once and rerun only items where the chosen answer's probability is below a cutoff. Set the cutoff on different data from the data you evaluate on.
 
-## LLM 답의 신뢰도 측정을 위한 self-consistency test의 여러 방법
+# LLM 답의 신뢰도 측정을 위한 self-consistency test의 여러 방법
 
 1. **고정 N번:** 샘플링을 켜고(temp > 0, seed 변경) N번 돌려 항목별로 일치하는 수를 세고 다수결. 단순하지만 모든 항목에 N번.
 2. **적응형:** 두 번 돌려 같으면 멈추고, 다르면 더 돌려 다수결로 정한다. 데이터가 안정적일수록 두 번에서 끝나는 항목이 많다.
