@@ -35,6 +35,8 @@ This is because of how a model writes text. It goes one token at a time:
 
 So the range of a logprob is above −∞ and at most 0. The closer to 0, the more confident the model was.
 
+**Related:** [Self-consistency tests](self-consistency-test.md): use logprobs to rerun only answers below a cutoff.
+
 ## 모델은 자기가 생성한 토큰의 확률을 읽을 수 없다 (logprobs)
 
 모델은 답을 생성할 때 사용한 자기 토큰의 확률을 읽을 수 없다.
@@ -62,6 +64,8 @@ So the range of a logprob is above −∞ and at most 0. The closer to 0, the mo
 **logprob의 가장 큰 값은 0이다.** (값은 위 표와 같다)
 
 그래서 logprob의 범위는 −∞ 초과, 0 이하다. 0에 가까울수록 모델이 확신한 것이다.
+
+**관련 글:** [Self-consistency test](self-consistency-test.md): logprob이 기준값보다 낮은 답만 다시 돌리는 방법.
 
 ## Sources
 - OpenAI Cookbook, Using logprobs: https://cookbook.openai.com/examples/using_logprobs
